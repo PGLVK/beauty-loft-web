@@ -1,4 +1,4 @@
-      preview: falsebackend:
+backend:
   name: git-gateway
   branch: main
 
