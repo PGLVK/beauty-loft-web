@@ -1,0 +1,193 @@
+/* --- ЗМІННІ ТА БАЗА --- */
+:root {
+    --bg-body: #F9F7F5;
+    --text-main: #4A403A;
+    --text-muted: #8C8580;
+    --accent: #D4A373;
+    --shadow: 0 10px 30px rgba(0,0,0,0.05);
+    --font-header: 'Montserrat', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg-body); color: var(--text-main); font-family: var(--font-body); line-height: 1.6; overflow-x: hidden; }
+h1, h2, h3, h4, .logo { font-family: var(--font-header); font-weight: 700; }
+a { text-decoration: none; transition: 0.3s; }
+ul { list-style: none; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+.section { padding: 80px 0; }
+.bg-gray { background: #fff; }
+
+/* --- НАВІГАЦІЯ --- */
+.navbar { position: fixed; width: 100%; top: 0; background: rgba(249,247,245,0.95); backdrop-filter: blur(10px); z-index: 999; border-bottom: 1px solid rgba(0,0,0,0.05); }
+.nav-container { display: flex; justify-content: space-between; align-items: center; height: 70px; }
+.logo { font-size: 1.2rem; letter-spacing: 1px; color: var(--text-main); }
+.nav-menu { display: flex; gap: 30px; }
+.nav-link { color: var(--text-main); font-size: 0.85rem; text-transform: uppercase; font-weight: 600; }
+.nav-link:hover { color: var(--accent); }
+.hamburger { display: none; cursor: pointer; }
+.bar { display: block; width: 25px; height: 3px; margin: 5px auto; background: var(--text-main); transition: 0.3s; }
+
+/* --- HERO --- */
+.hero { height: 100vh; display: flex; align-items: center; text-align: center; padding-top: 70px; }
+.hero h1 { font-size: 3rem; line-height: 1.1; margin-bottom: 20px; }
+.subtitle { font-size: 1.2rem; color: var(--accent); font-weight: 400; font-style: italic; }
+.hero p { max-width: 600px; margin: 0 auto 40px; color: var(--text-muted); }
+.btn { display: inline-block; padding: 14px 35px; text-transform: uppercase; font-weight: 600; font-size: 0.8rem; letter-spacing: 1px; }
+.btn-primary { background: var(--text-main); color: #fff; }
+.btn-primary:hover { background: transparent; color: var(--text-main); border: 1px solid var(--text-main); }
+.btn-outline { border: 1px solid var(--text-main); color: var(--text-main); margin-left: 15px; }
+.btn-outline:hover { background: var(--text-main); color: #fff; }
+
+/* --- ПОСЛУГИ (3 колонки + Лінії) --- */
+.section-title { text-align: center; font-size: 2rem; margin-bottom: 50px; }
+.price-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 30px; 
+    align-items: start; 
+}
+.category-title { font-size: 1.3rem; margin-bottom: 20px; border-bottom: 2px solid var(--accent); padding-bottom: 10px; display: inline-block; width: 100%; }
+.price-item { display: flex; justify-content: space-between; border-bottom: 1px dotted #ccc; padding-bottom: 5px; margin-bottom: 15px; align-items: flex-end; }
+.name { font-size: 0.9rem; font-weight: 600; padding-right: 10px; }
+.cost { color: var(--accent); font-weight: 700; white-space: nowrap; }
+.center-btn-wrapper { width: 100%; display: flex; justify-content: center; margin-top: 40px; }
+
+/* --- МАГАЗИН & БЛОГ (Фікс картинок) --- */
+.shop-grid, .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+.product-card, .blog-card { background: #fff; border: 1px solid #eee; transition: 0.3s; }
+.product-card:hover, .blog-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+.product-img, .blog-image { height: 250px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #f0f0f0; }
+.product-img img, .blog-image img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+.product-card:hover img, .blog-card:hover img { transform: scale(1.05); }
+.product-info, .blog-content { padding: 20px; }
+.price-row { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; border-top: 1px solid #eee; padding-top: 15px; }
+.price { font-weight: 700; font-size: 1.1rem; }
+.btn-buy { color: var(--accent); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; }
+.blog-date { font-size: 0.75rem; color: var(--accent); font-weight: 700; display: block; margin-bottom: 5px; }
+
+/* --- ПРО НАС --- */
+.about-container { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+.features-list li { margin-bottom: 15px; }
+.feature-subtext { font-size: 0.85rem; color: var(--text-muted); font-weight: 400; margin-top: 5px; }
+.about-image-wrapper { position: relative; 
+    max-width: 420px; 
+    margin: 0 auto;}
+.main-profile-img { width: 100%; 
+    border-radius: 20px; 
+    display: block;
+    /* Створюємо рамку за допомогою тіні - це найнадійніший спосіб */
+    box-shadow: 15px 15px 0 0 #4A403A; }
+.about-image-wrapper::after { display: none; }
+
+/* --- ФУТЕР (Білий Інстаграм) --- */
+.footer { background: #4A403A; color: #fff; padding: 60px 0 20px; font-size: 0.9rem; }
+.footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1.5fr; gap: 40px; margin-bottom: 40px; }
+.footer h3 { font-size: 1.4rem; text-transform: uppercase; color: #fff; }
+.footer-subtitle { color: var(--accent); font-style: italic; display: block; margin-bottom: 15px; }
+.footer h4 { color: var(--accent); text-transform: uppercase; margin-bottom: 20px; font-size: 0.9rem; }
+.footer a { color: #ccc; } 
+.footer a:hover { color: var(--accent); }
+.contact-item { display: flex; gap: 10px; margin-bottom: 15px; color: #ccc; }
+.btn-outline-light { border: 1px solid rgba(255,255,255,0.3); color: #fff; padding: 10px 20px; display: inline-block; margin-top: 10px; text-transform: uppercase; font-size: 0.75rem; font-weight: 600; }
+.btn-outline-light:hover {
+    background: var(--accent) !important;
+    border-color: var(--accent) !important;
+    color: #ffffff !important; /* Примусово залишаємо текст білим, щоб він не зливався */
+}
+.copyright { text-align: center; font-size: 0.75rem; color: #888; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; }
+
+/* Фікс кольору Інстаграм */
+.social-link { color: #fff !important; border-bottom: 1px solid var(--accent); padding-bottom: 2px; font-weight: 600; }
+.social-link:hover { color: var(--accent) !important; border-color: #fff; }
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .hamburger { display: block; }
+    .nav-menu { position: fixed; left: -100%; top: 70px; flex-direction: column; background: #fff; width: 100%; text-align: center; padding: 40px 0; transition: 0.3s; box-shadow: 0 5px 10px rgba(0,0,0,0.1); }
+    .nav-menu.active { left: 0; }
+    .hamburger.active .bar:nth-child(2) { opacity: 0; }
+    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    .hero h1 { font-size: 2.2rem; }
+    .price-grid, .about-container, .footer-grid { grid-template-columns: 1fr; }
+    .footer-grid { text-align: center; }
+    .contact-item { justify-content: center; }
+}
+/* Додаємо відступ у футері перед Інстаграмом */
+.footer-desc {
+    margin-bottom: 30px; /* Це опустить кнопку нижче */
+    display: block;
+    color: #ddd; /* (продублюємо колір про всяк випадок) */
+}/* --- ФІКСИ ДЛЯ КАРТОК БЛОГУ НА ГОЛОВНІЙ --- */
+
+/* 1. Робимо всі картинки ідеально рівними і забираємо білі поля */
+.blog-image {
+    width: 100%;
+    height: 220px; /* Фіксована висота для всіх фото */
+    overflow: hidden;
+}
+
+.blog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ця команда змусить вертикальне фото заповнити весь квадрат */
+    display: block;
+}
+
+/* 2. Вбиваємо фіолетовий колір назавжди */
+.read-more, .read-more:visited, .read-more:active {
+    color: #222 !important; /* Завжди чорний/темно-сірий */
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.read-more:hover {
+    color: #777 !important; /* Трохи світлішає при наведенні мишкою */
+}
+
+#shop img {
+    height: 250px !important;
+    object-fit: contain !important;
+}
+/* --- ІДЕАЛЬНЕ ВИРІВНЮВАННЯ ФОТО ОЛЕНИ --- */
+#about .about-image-wrapper {
+    display: flex;
+    justify-content: center; /* Центруємо фото горизонтально */
+    align-items: center;    /* Центруємо вертикально, якщо треба */
+    position: relative;
+    max-width: 450px;       /* Обмежуємо максимальний розмір, щоб не було гігантським */
+    margin: 0 auto;         /* Центруємо весь блок на сторінці */
+}
+
+#about .main-profile-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 15px;    /* Додаємо легке закруглення, це виглядає сучасніше */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Робимо тінь м'якшою */
+    z-index: 2;
+    position: relative;
+}
+
+/* Декоративний квадратик ззаду (якщо він є у твоєму коді) */
+#about .about-image-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;          /* Зміщуємо вниз */
+    right: -15px;           /* Зміщуємо вправо */
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--accent); /* Колір вашого золотого акценту */
+    border-radius: 15px;
+    z-index: 1;
+}
+
+/* Адаптивність для телефонів */
+@media (max-width: 768px) {
+    #about .about-image-wrapper {
+        max-width: 300px;   /* На телефонах робимо фото меншим */
+        margin-top: 30px;   /* Додаємо відступ зверху */
+    }
+}
