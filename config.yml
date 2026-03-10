@@ -1,7 +1,6 @@
-backend:
+            field: {label: "Дата (РРРР-ММ-ДД)", name: "date", widget: "string", hint: "Наприклад: 2026-03-25"}backend:
   name: git-gateway
   branch: main # Переконайся, що твоя головна гілка називається main
-  
 
 media_folder: "img" # Куди будуть завантажуватися картинки з адмінки
 public_folder: "img"
@@ -18,17 +17,8 @@ collections:
       - {label: "Головне фото", name: "image", widget: "image"}
       - {label: "Короткий опис (для головної)", name: "description", widget: "text"}
       - {label: "Текст статті", name: "body", widget: "markdown"}
-      - name: "schedule"
+  - name: "schedule"
     label: "Графік (Зайняті дати)"
     delete: false # Вимикаємо видалення всього файлу, тільки редагування
     editor:
       preview: false
-    files:
-      - label: "Список зайнятих дат"
-        name: "booked_dates"
-        file: "booked-dates.json"
-        fields:
-          - label: "Дати, коли запис закритий"
-            name: "dates"
-            widget: "list"
-            field: {label: "Дата (РРРР-ММ-ДД)", name: "date", widget: "string", hint: "Наприклад: 2026-03-25"}
