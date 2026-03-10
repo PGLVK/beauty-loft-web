@@ -17,8 +17,12 @@ collections:
       - {label: "Головне фото", name: "image", widget: "image"}
       - {label: "Короткий опис", name: "description", widget: "text"}
       - {label: "Текст статті", name: "body", widget: "markdown"}
-  - name: "schedule"
-    label: "Графік (Зайняті дати)"
-    delete: false
-    editor:
-      preview: false
+
+  - name: "schedule_data"
+    label: "Графік"
+    files:
+      - label: "Зайняті дати"
+        name: "booked_dates"
+        file: "booked-dates.json"
+        fields:
+          - {label: "Дані графіка", name: "content", widget: "text"}
